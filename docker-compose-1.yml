@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  my-app:
+    image: openjdk:8-jre-alpine
+    container_name: my-app-container
+    volumes:
+      - ./target/task-demo-metrics-prometheus-2.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8080:8080"
